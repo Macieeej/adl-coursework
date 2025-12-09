@@ -41,9 +41,9 @@ Input Representation
 
 This multi-resolution design enables the model to capture both local fine details and global scene context.
 
+⸻
 
-
-### 🏃 Run Instructions
+🏃 Run Instructions
 
 Make sure to edit the dir global variables at the top of the program to point to the directory that contains the data and where the checkpoints will be saved/loaded from, the name may be different. On BC4, you will probably have this in the work directory.
 
