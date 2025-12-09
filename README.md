@@ -1,4 +1,49 @@
-# adl-coursework
+# Human Visual Saliency Prediction with Multi-Resolution CNN
+
+### Applied Deep Learning Coursework | University of Bristol
+
+This project re-implements and extends a state-of-the-art Multi-Resolution Convolutional Neural Network (Mr-CNN) for predicting human eye fixation (visual saliency) in natural images. The model learns to identify where humans are most likely to look when viewing a scene, a core problem in computer vision, human–computer interaction, and attention modeling.
+
+The implementation closely follows the architecture introduced in Predicting Eye Fixations using Convolutional Neural Networks, with large-scale hyperparameter tuning, checkpointing, evaluation, and transfer learning.
+
+⸻
+
+🧠 Problem Overview
+
+Human visual attention focuses on only a small subset of the information present in a scene. Accurately predicting saliency regions (eye fixation points) has applications in:
+	•	Image and video compression
+	•	Autonomous driving
+	•	Medical imaging
+	•	Human–computer interaction
+	•	Robotics and surveillance
+
+Traditional saliency methods rely on hand-crafted features and fail to generalize across complex scenes. This project addresses these limitations using a deep, multi-resolution CNN architecture that learns hierarchical saliency features directly from data.
+
+⸻
+
+🏗️ Model Architecture
+
+The implemented Mr-CNN consists of:
+	•	Three parallel input streams, each processing the image at a different resolution
+	•	Each stream contains:
+  	•	3× Convolution + Pooling blocks
+  	•	Dropout regularization
+  	•	Fully connected layers
+  •	The streams are concatenated and passed through:
+  	•	A final fully connected layer
+  	•	A binary classifier predicting fixation vs non-fixation
+
+Input Representation
+	•	Each training sample is a 42×42 RGB image patch
+	•	Binary classification:
+	•	Fixation patch: saliency > 0.9
+	•	Non-fixation patch: saliency < 0.1
+
+This multi-resolution design enables the model to capture both local fine details and global scene context.
+
+
+
+### 🏃 Run Instructions
 
 Make sure to edit the dir global variables at the top of the program to point to the directory that contains the data and where the checkpoints will be saved/loaded from, the name may be different. On BC4, you will probably have this in the work directory.
 
